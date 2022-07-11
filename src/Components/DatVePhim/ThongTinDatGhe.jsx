@@ -9,7 +9,7 @@ class ThongTinDatGhe extends Component {
             return (
                 <tr key={idx}>
                     <th>{ele.soGhe}</th>
-                    <th>{ele.gia}</th>
+                    <th>{ele.gia.toLocaleString()}</th>
                     <th>
                         <button onClick={() => {
                             this.props.huyGhe(ele)
@@ -21,12 +21,6 @@ class ThongTinDatGhe extends Component {
         })
     };
 
-
-    tongTien = () => {
-        let total = 0;
-        this.props.dsGheDangDat.forEach(ele => { total += ele.gia })
-        return total
-    }
     render() {
         // console.log(this.props);
         return (
@@ -57,10 +51,16 @@ class ThongTinDatGhe extends Component {
                         <tbody>
                             {this.renderThongTin()}
                         </tbody>
+                        <tfoot>
+                            {/* <span className='text-white'>Total : {this.tongTien()}</span> */}
+                            <td></td>
+                            <td>Tổng tiền</td>
+                            <td>{this.props.dsGheDangDat.reduce((tongTien, ele) => {
+                                return tongTien += ele.gia
+                            }, 0).toLocaleString()}</td>
+                        </tfoot>
                     </table>
-                    <div>
-                        <span className='text-white'>Total : {this.tongTien()}</span>
-                    </div>
+
                 </div>
             </div>
         )
