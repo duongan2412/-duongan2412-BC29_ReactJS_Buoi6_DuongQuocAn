@@ -1,1 +1,1 @@
-export * from "./moviesSeat.js";
+export * from "./DatVePhim/datVeReducer.js";

@@ -8,12 +8,13 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 // REDUX STORE
 import { Provider } from 'react-redux';
 import { store } from './Store/config'
-import MoviesSeat from './Components/MoiveSeat/MoviesSeat';
+import DatVePhim from './Components/DatVePhim/DatVePhim';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <MoviesSeat></MoviesSeat>
+    <DatVePhim></DatVePhim>
   </Provider>
 );
 
