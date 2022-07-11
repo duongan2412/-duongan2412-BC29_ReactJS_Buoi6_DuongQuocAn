@@ -52,12 +52,14 @@ class ThongTinDatGhe extends Component {
                             {this.renderThongTin()}
                         </tbody>
                         <tfoot>
-                            {/* <span className='text-white'>Total : {this.tongTien()}</span> */}
-                            <td></td>
-                            <td>Tổng tiền</td>
-                            <td>{this.props.dsGheDangDat.reduce((tongTien, ele) => {
-                                return tongTien += ele.gia
-                            }, 0).toLocaleString()}</td>
+                            <tr>
+                                {/* <span className='text-white'>Total : {this.tongTien()}</span> */}
+                                <td></td>
+                                <td>Totals</td>
+                                <td>{this.props.dsGheDangDat.reduce((tongTien, ele) => {
+                                    return tongTien += ele.gia
+                                }, 0).toLocaleString()}</td>
+                            </tr>
                         </tfoot>
                     </table>
 
